@@ -1,20 +1,6 @@
-CHROMATIC_SCALE = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
+from intervals import INTERVAL_NAMES
 
-INTERVAL_NAMES = {
-    0: "R",
-    1: "m2",
-    2: "M2",
-    3: "m3",
-    4: "M3",
-    5: "P4",
-    6: "A4/d5",
-    7: "P5",
-    8: "m6",
-    9: "M6",
-    10: "m7",
-    11: "M7",
-    12: "P8"
-}
+CHROMATIC_SCALE = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
 
 MAJOR_SCALE = [0, 2, 4, 5, 7, 9, 11, 12]
 
