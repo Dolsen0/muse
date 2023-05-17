@@ -1,4 +1,4 @@
-chromatic = [    "c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
+chromatic = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
 
 intervals = {
     "root": 0,
@@ -43,18 +43,16 @@ chord_types = {
 }
 
 def get_chromatic_scale(root):
-    root_index = chromatic.index(root)
+    root_index = chromatic.index(root.lower())
     return chromatic[root_index:] + chromatic[:root_index + 1]
-
 
 def get_chord(root, chord_type):
     root_index = chromatic.index(root.lower())
     interval_list = chord_types.get(chord_type)
-    if interval_list is None:
+    if not interval_list:
         return None
     intervals_str = "-".join(interval_names[intervals[interval_list[i]]] for i in range(len(interval_list)))
     notes_str = "-".join(chromatic[(root_index + intervals[interval_list[i]]) % 12] for i in range(len(interval_list)))
     return f"{root.capitalize()} {chord_type.capitalize()}: {notes_str} ({intervals_str})"
-
 
 print(get_chord("B", "major7"))
