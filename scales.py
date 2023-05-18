@@ -10,6 +10,10 @@ DIMINISHED_SCALE = [0, 2, 3, 5, 6, 8, 9, 11, 12]
 
 AUGMENTED_SCALE = [0, 2, 4, 6, 8, 10, 12]
 
+PENTATONIC_MAJOR_SCALE = [0, 2, 4, 7, 9, 12]
+
+PENTATONIC_MINOR_SCALE = [0, 3, 5, 7, 10, 12]
+
 def get_chromatic_scale(root):
     root_index = CHROMATIC_SCALE.index(root.lower())
     return f"\n {CHROMATIC_SCALE[root_index:] + CHROMATIC_SCALE[:root_index + 1]}"
@@ -27,3 +31,5 @@ print(get_scale("E", "major"))
 print(get_scale("E", "minor"))
 print(get_scale("E", "diminished"))
 print(get_scale("E", "augmented"))
+print(get_scale("E", "pentatonic_major"))
+print(get_scale("E", "pentatonic_minor"))
